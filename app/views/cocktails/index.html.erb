@@ -1,16 +1,36 @@
-<div class="container">
-<h1>All Cocktails</h1>
 
-<br/>
 
-<%= link_to "Add Cocktail", new_cocktail_path %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <a class="navbar-brand" href="#">
+      <%= image_tag "logo.png"%>
+    </a>
 
-<br/>
-<br/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %> <%= link_to "🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %> </li>
-  <% end %>
-</ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Add Cocktail", new_cocktail_path, class:"btn btn-dark" %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
+
+<div class="container mt-3 d-flex flex-row">
+  <div class="cards">
+  <div class="card">
+    <% @cocktails.each do |cocktail| %>
+    <%= cl_image_tag cocktail.photo, width: 300, height: 200, crop: :fill %>
+    <div class="card-category">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <%= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
