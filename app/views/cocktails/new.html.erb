@@ -2,11 +2,19 @@
 <h1>Cocktail Form</h1>
 
 <%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :name %>
+
+  <div class="field">
+  <%= f.input :name,  class: "rounded" %>
+  </div>
+
+  <div class="field">
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <br />
-  <br />
-  <%= f.submit "add new cocktail", class: "btn btn-primary" %>
+  </div>
+
+  <div class="field">
+  <%= f.submit "Creat Cocktail", class: "btn btn-primary" %>
+  </div>
+
 <% end %>
 </div>

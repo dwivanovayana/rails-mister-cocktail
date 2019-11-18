@@ -1,29 +1,13 @@
-
-
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <a class="navbar-brand" href="#">
-      <%= image_tag "logo.png"%>
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Add Cocktail", new_cocktail_path, class:"btn btn-dark" %>
-        </li>
-      </ul>
-    </div>
-  </div>
+<div class="banner">
+  <h1>Create your own cocktail recipe.</h1>
+  <%= link_to "Add Cocktail", new_cocktail_path, class:"button" %>
 </div>
 
 <div class="container mt-3 d-flex flex-row">
   <div class="cards">
   <div class="card">
     <% @cocktails.each do |cocktail| %>
-    <%= cl_image_tag cocktail.photo, width: 300, height: 200, crop: :fill %>
+    <%= cl_image_tag cocktail.photo, class: "photo"%>
     <div class="card-category">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
       <%= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
@@ -32,5 +16,3 @@
   </div>
 </div>
 </div>
-
-

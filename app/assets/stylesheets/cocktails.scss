@@ -2,13 +2,42 @@ body {
   font-family: $headers-font;
 }
 
-.container {
-  display: flex;
+.banner{
+  background-image: url(http://www.cocktailsmachine.es/wp-content/uploads/2017/11/videoblocks-bright-cocktail-with-lemon-in-glass-splashing-water-on-dark-background-the-object-is-illuminated-from-two-sides.png);
+  width: cover;
+  height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.button {
+  position: absolute;
+  border: 3px solid white;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+  top: 55%;
+  left: 10%;
 }
 
 .cards {
-  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
   .card {
     list-style: none;
+    color: black;
+    font-weight: bold;
   }
 }
