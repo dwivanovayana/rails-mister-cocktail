@@ -1,19 +1,18 @@
-<div class="container">
+<div class="banner-show">
+  <%= cl_image_tag @cocktail.photo, class: "sh-photo" %>
+  <div class="title"><%= @cocktail.name.upcase %></div>
+  <%= link_to "Back", cocktails_path, class: "home-btn" %>
+</div>
 
-<h1><%= @cocktail.name %></h1>
-
-<%= cl_image_tag @cocktail.photo, width: 400, height: 300, crop: :fill %>
-
-
-<p><strong>Ingredients:</strong></p>
-<p><% @cocktail.doses.each do |dose| %></p>
-  <p>
-    <%= dose.ingredient.name %>
-    <%= dose.description %>
-    <%= link_to "🗑", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %>
-  </p>
+<div class="ingredient-box">
+  <p class="subtitle">Ingredients</p>
+  <% @cocktail.doses.each do |dose| %>
+    <div>
+      <%= dose.ingredient.name %>  -  <%= dose.description %>
+      <%= link_to "✖️", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
   <% end %>
-
-<%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail[:id]) %>
-<%= link_to "Back To Homepage", cocktails_path %>
+  <div class="mt-5">
+   <%= render 'shared/doses_form' %>
+  </div>
 </div>

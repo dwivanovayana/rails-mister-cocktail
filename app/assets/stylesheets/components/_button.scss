@@ -1,0 +1,31 @@
+.button {
+  position: absolute;
+  border: 3px solid white;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+  top: 55%;
+  left: 10%;
+}
+
+.dose-btn {
+  padding: 7px 50px;
+  border-radius: 37px;
+  color: white;
+  background-color: $cocktail;
+  border: 0.5px solid transparent;
+}
+
+.home-btn {
+  padding: 7px 50px;
+  border-radius: 37px;
+  color: white;
+  background-color: $cocktail;
+  border: 0.5px solid transparent;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
