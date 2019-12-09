@@ -7,7 +7,7 @@
   <div class="cards">
   <div class="card">
     <% @cocktails.each do |cocktail| %>
-    <%= cl_image_tag cocktail.photo, class: "photo"%>
+    <%= cl_image_tag cocktail.photo, width:400, height:500, crop: :fill %>
     <div class="card-category">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
       <%= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
