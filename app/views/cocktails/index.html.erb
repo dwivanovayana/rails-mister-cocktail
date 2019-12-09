@@ -9,7 +9,7 @@
     <div class="card">
         <%= link_to cocktail_path(cocktail), :action => 'go' do %>
           <%= cl_image_tag cocktail.photo, class: "lp-photo" %>
-          <div class="lp-name"><%= cocktail.name %></div>
+          <div class="lp-name"><%= cocktail.name.capitalize %></div>
           <%#= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
     </div>
