@@ -5,7 +5,7 @@ body {
 .banner{
   background-image: url(http://www.cocktailsmachine.es/wp-content/uploads/2017/11/videoblocks-bright-cocktail-with-lemon-in-glass-splashing-water-on-dark-background-the-object-is-illuminated-from-two-sides.png);
   width: cover;
-  height: 100vh;
+  height: 90vh;
   position: relative;
 }
 
@@ -31,13 +31,38 @@ h1 {
   left: 10%;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  .card {
-    list-style: none;
-    color: black;
-    font-weight: bold;
-  }
+.lp-photo {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
+
+.lp-name {
+  display: flex;
+ position: absolute;
+ text-decoration: none;
+ color: black;
+}
+
+.cards {
+  margin: 30px auto 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }

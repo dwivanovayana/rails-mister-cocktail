@@ -5,14 +5,14 @@
 
 <div class="container mt-3 d-flex flex-row">
   <div class="cards">
-  <div class="card">
-    <% @cocktails.each do |cocktail| %>
-    <%= cl_image_tag cocktail.photo, width:400, height:500, crop: :fill %>
-    <div class="card-category">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      <%= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% @cocktails.each do |cocktail| %>
+    <div class="card">
+        <%= link_to cocktail_path(cocktail), :action => 'go' do %>
+          <%= cl_image_tag cocktail.photo, class: "lp-photo" %>
+          <div class="lp-name"><%= cocktail.name %></div>
+          <%#= link_to " 🗑", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
     </div>
-    <% end %>
+      <% end %>
   </div>
-</div>
 </div>
