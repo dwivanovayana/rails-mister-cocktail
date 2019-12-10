@@ -1,0 +1,20 @@
+<div class="container">
+<h1>Cocktail Form</h1>
+
+<%= simple_form_for @cocktail do |f| %>
+
+  <div class="field">
+  <%= f.input :name,  class: "rounded" %>
+  </div>
+
+  <div class="field">
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  </div>
+
+  <div class="form">
+  <%= f.submit "Create Cocktail", class: "dose-btn" %>
+  </div>
+
+<% end %>
+</div>

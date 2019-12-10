@@ -1,31 +1,69 @@
 .button {
   position: absolute;
+  margin-top: 10px;
   border: 3px solid white;
-  border-radius: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
   color: white;
+  background-color: transparent;
+  padding: 7px 50px;
+  border-radius: 35px;
   top: 55%;
   left: 10%;
 }
 
+.button:hover {
+  border: 3px solid white;
+  color: #133963;
+  background-color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .dose-btn {
-  padding: 7px 50px;
-  border-radius: 37px;
   color: white;
   background-color: $cocktail;
-  border: 0.5px solid transparent;
+  border: 3px solid transparent;
+  padding: 7px 50px;
+  border-radius: 35px;
+  text-decoration: none;
+}
+
+.dose-btn:hover {
+  border: 3px solid $cocktail;
+  color: $cocktail;
+  background-color: white;
+  text-decoration: none;
+}
+
+.back-btn {
+  position: absolute;
+  border: 3px solid #E9B44C;
+  color: #E9B44C;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 35px;
+  text-decoration: none;
+  left: 70px;
+}
+
+.back-btn:hover {
+  color: white;
+  background-color: $cocktail;
+  border: 3px solid transparent;
+  text-decoration: none;
 }
 
 .home-btn {
-  padding: 7px 50px;
-  border-radius: 37px;
-  color: white;
-  background-color: $cocktail;
-  border: 0.5px solid transparent;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  border: 3px solid #E9B44C;
+  padding: 10px 20px;
+  border-radius: 35px;
+  text-decoration: none;
+  left: 70px;
+  top: 20px;
+}
+
+.home-btn:hover {
+  background-color: $cocktail;
+  border: 3px solid $cocktail;
+  text-decoration: none;
 }

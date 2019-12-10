@@ -3,6 +3,9 @@ body {
   background-color: white;
 }
 
+.container {
+  margin-bottom: 50px;
+}
 .banner{
   background-image: url(http://www.cocktailsmachine.es/wp-content/uploads/2017/11/videoblocks-bright-cocktail-with-lemon-in-glass-splashing-water-on-dark-background-the-object-is-illuminated-from-two-sides.png);
   width: cover;
@@ -25,19 +28,11 @@ h1 {
 
 .title {
   position: absolute;
-  top: 45%;
-  left: 45%;
+  bottom: 5%;
+  left: 5%;
   font-weight: bolder;
   font-size: 64px;
-  color: black;
-}
-
-.lp-name {
-  display: flex;
- position: absolute;
- text-decoration: none;
- color: $cocktail;
- text-shadow: none;
+  color: white;
 }
 
 .ingredient-box {

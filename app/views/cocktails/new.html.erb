@@ -1,20 +1,18 @@
-<div class="container">
-<h1>Cocktail Form</h1>
-
-<%= simple_form_for @cocktail do |f| %>
-
-  <div class="field">
-  <%= f.input :name,  class: "rounded" %>
-  </div>
-
-  <div class="field">
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  </div>
-
-  <div class="field">
-  <%= f.submit "Create Cocktail", class: "btn btn-primary" %>
-  </div>
-
-<% end %>
+<div class="form">
+  <%= link_to "🔙", cocktails_path, class: "back-btn" %>
+  <div class="form-box">
+    <div class="subtitle">Create a Cocktail</div>
+      <%= simple_form_for @cocktail do |f| %>
+        <div class="field">
+          <%= f.input :name,  class: "rounded",placeholder: "Mojito", label: false %>
+        </div>
+        <div class="field">
+          <%= f.input :photo, label: false %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+        <div class="field">
+         <%= f.submit "Create", class: "dose-btn" %>
+        </div>
+      <% end %>
+    </div>
 </div>
