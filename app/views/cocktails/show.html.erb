@@ -15,4 +15,8 @@
   <div class="mt-5">
    <%= render 'shared/doses_form' %>
   </div>
+  <div class="remove">
+    <%= link_to "remove cocktail", cocktail_path(@cocktail), class: "remove", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
 </div>
+
