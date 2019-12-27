@@ -1,5 +1,8 @@
 
 .card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -7,7 +10,7 @@
   color: white;
   position: relative;
   border-radius: 4px;
-  margin-bottom: 50px;
+  margin: 0px auto 50px;
 }
 
 .card-link {
@@ -25,9 +28,7 @@
 }
 
 .card-description {
-  text-align: center;
-  position: relative;
-  top: 50%;
+  margin: auto;
 }
 .card-description h2 {
   font-size: 24px;

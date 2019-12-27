@@ -39,6 +39,17 @@ h1 {
   margin: 30px 100px 100px;
 }
 
+.remove {
+  text-decoration: none;
+  color: lightgrey;
+  margin-top: 50px;
+}
+
+.remove:hover {
+  color: darkgrey;
+  text-decoration: none;
+}
+
 .subtitle {
   font-size: 36px;
   font-family: $body-font;
