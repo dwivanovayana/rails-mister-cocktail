@@ -9,9 +9,11 @@
 
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path('drink.png') %>
     <%= stylesheet_pack_tag "application" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': 'reload', defer: true%> <!-- from app/javascript/packs/application.js -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %> <!-- from app/assets/javascripts/application.js -->
+    <%= favicon_link_tag asset_path('drink.png') %>
+
 
   </head>
 
@@ -19,7 +21,6 @@
     <%= render 'shared/navbar' %>
     <%= yield %>
 
-    <%= javascript_include_tag "application" %>
-    <%= javascript_pack_tag "application" %>
+    <%#= javascript_include_tag "application" %>
   </body>
 </html>
