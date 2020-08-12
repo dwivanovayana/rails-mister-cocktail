@@ -1,6 +1,6 @@
 <div class="subtitle">Add ingredients here</div>
   <%= simple_form_for ([@cocktail, @dose]) do |f| %>
-    <%= f.association :ingredient, label: false, include_blank: "Select ingredient", input_html: {class: 'select2'}, include_hidden: false %>
     <%= f.input :description, placeholder: "Amount", label: false %>
+    <%= f.association :ingredient, label: false, include_blank: "Select ingredient", input_html: {class: 'select2'}, include_hidden: false %>
     <%= f.submit "Add", class: "dose-btn" %>
   <% end %>
