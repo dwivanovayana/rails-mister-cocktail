@@ -1,0 +1,26 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <%= image_tag "drink.png" %>
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= form_tag cocktails_path, method: :get do %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a cocktails 🍹"
+          %>
+        </li>
+        <li class="nav-item">
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
