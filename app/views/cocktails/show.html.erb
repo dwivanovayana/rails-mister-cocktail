@@ -1,5 +1,13 @@
 <div class="banner-show">
-  <%= cl_image_tag @cocktail.photo, class: "sh-photo" %>
+  <% if @cocktail.photo.present? %>
+    <%= cl_image_tag @cocktail.photo, class: "sh-photo" %>
+  <% else %>
+    <div class="sh-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+  <% end %>
+
+
+
+
   <div class="title"><%= @cocktail.name.upcase %></div>
   <%= link_to "🔙", cocktails_path, class: "home-btn" %>
 </div>
