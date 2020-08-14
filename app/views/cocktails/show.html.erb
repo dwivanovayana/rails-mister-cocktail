@@ -1,6 +1,6 @@
 <div class="banner-show">
-  <% if @cocktail.photo.present? %>
-    <%= cl_image_tag @cocktail.photo, class: "sh-photo" %>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, class: "sh-photo" %>
   <% else %>
     <div class="sh-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cocktail.jpg', height: 200, width: 300, crop: :fill %>');">
   <% end %>

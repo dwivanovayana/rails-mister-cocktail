@@ -7,8 +7,7 @@
           <%= f.input :name,  class: "rounded",placeholder: "Mojito", label: false %>
         </div>
         <div class="field">
-          <%= f.input :photo, label: false %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :photo, as: :file %>
         </div>
         <div class="field">
          <%= f.submit "Create", class: "dose-btn" %>
