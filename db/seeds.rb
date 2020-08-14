@@ -5,12 +5,13 @@ require 'faker'
 puts 'Cleansing Datebase...'
 Cocktail.destroy_all
 Ingredient.destroy_all
+Dose.destroy_all
+Review.destroy_all
 
 puts 'Creating 30 fake cocktails...'
 30.times do
   cocktail = Cocktail.new(
     name:    Faker::Company.name,
-    photo:  '/images/cocktail.jpg'
   )
   cocktail.save!
 end
