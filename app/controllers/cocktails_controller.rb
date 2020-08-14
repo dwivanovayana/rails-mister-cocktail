@@ -25,6 +25,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @doses = Dose.where(cocktail: @cocktail)
     @dose = Dose.new
+    @review = Review.new
   end
 
   def destroy

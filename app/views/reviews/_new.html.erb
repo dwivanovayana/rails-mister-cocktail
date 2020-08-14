@@ -1,0 +1,6 @@
+<div class="subtitle">Add reviews here</div>
+<%= simple_form_for [cocktail, review] do |f| %>
+  <%= f.input :content, placeholder: "What do you think about the cocktail?", label: false  %>
+  <%= f.input :rating, collection: 0..5, label: false, include_blank: "Rating", input_html: {class: 'select2'}, include_hidden: false %>
+  <%= f.submit "Add Review", class: "dose-btn" %>
+<% end %>

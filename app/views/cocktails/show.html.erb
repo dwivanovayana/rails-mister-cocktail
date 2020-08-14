@@ -4,30 +4,30 @@
   <% else %>
     <div class="sh-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cocktail.jpg', height: 200, width: 300, crop: :fill %>');">
   <% end %>
-
-
-
-
   <div class="title"><%= @cocktail.name.upcase %></div>
-  <%= link_to "🔙", cocktails_path, class: "home-btn" %>
 </div>
 
-<div class="ingredient-box">
+<!-- <div class="show-content"> -->
+
+  <!-- INGREDIENT -->
+  <div class="ingredient-box">
   <p class="subtitle">Ingredients</p>
-  <% @cocktail.doses.each do |dose| %>
-    <div>
-      <%= dose.ingredient.name %>  -  <%= dose.description %>
-      <%= link_to "✖️", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
+  <% if @cocktail.reviews.empty? %>
+    <p>What's the ingredients for <strong><%= @cocktail.name.upcase %></strong></p>
+  <% else %>
+    <% @cocktail.doses.each do |dose| %>
+      <div>
+        <%= dose.ingredient.name %>  -  <%= dose.description %>
+        <%= link_to "✖️", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %>
+      </div>
+    <% end %>
   <% end %>
   <div class="mt-5">
     <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
   </div>
-  <div class="remove">
-    <%= link_to "remove cocktail", cocktail_path(@cocktail), class: "remove", method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
 </div>
 
+<!-- REVIEW -->
 <div class="ingredient-box">
   <p class="subtitle">Reviews</p>
   <% if @cocktail.reviews.empty? %>
@@ -43,13 +43,26 @@
               <% counter += 1 %>
             <% end %>
           </span>
-          <%= review.content %>
+          <%= review.content %> - <%= link_to "✖️", review_path(review), method: :delete, data: {confirm: "Are you sure?"} %>
         </li>
       <% end %>
     </ul>
   <% end %>
-
   <%= render "reviews/new", cocktail: @cocktail, review: @review %>
-
 </div>
+
+<br>
+
+<!-- </div> -->
+
+
+<div class="ingredient-box">
+  <div class="remove">
+    <%= link_to "BACK", cocktails_path, class: "dose-btn" %>
+    <br>
+    <br>
+    <%= link_to "REMOVE COCKTAIL", cocktail_path(@cocktail), class: "remove", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
+
 
