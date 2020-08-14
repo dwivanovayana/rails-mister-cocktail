@@ -21,10 +21,35 @@
     </div>
   <% end %>
   <div class="mt-5">
-   <%= render 'doses/form' %>
+    <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
   </div>
   <div class="remove">
     <%= link_to "remove cocktail", cocktail_path(@cocktail), class: "remove", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
+</div>
+
+<div class="ingredient-box">
+  <p class="subtitle">Reviews</p>
+  <% if @cocktail.reviews.empty? %>
+    <p>Be the first to let a review</p>
+  <% else %>
+    <ul class="list-group">
+      <% @cocktail.reviews.each do |review| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span class="badge badge-primary badge-pill">
+            <% counter = 0 %>
+            <% 5.times do %>
+              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+              <% counter += 1 %>
+            <% end %>
+          </span>
+          <%= review.content %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= render "reviews/new", cocktail: @cocktail, review: @review %>
+
 </div>
 
