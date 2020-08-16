@@ -1,0 +1,14 @@
+
+
+<%= simple_form_for @cocktail do |f| %>
+  <div class="field">
+    <%= f.input :name,  class: "rounded",placeholder: "Mojito", label: false %>
+  </div>
+  <div class="field">
+    <%= f.input :photo, as: :file %>
+  </div>
+  <div class="field">
+   <%= f.submit "Create", class: "dose-btn" %>
+   <%= link_to "CANCEL", cocktails_path, class: "back-btn" %>
+  </div>
+<% end %>
