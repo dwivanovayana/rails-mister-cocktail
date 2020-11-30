@@ -8,8 +8,8 @@ Ingredient.destroy_all
 Dose.destroy_all
 Review.destroy_all
 
-puts 'Creating 30 fake cocktails...'
-30.times do
+puts 'Creating 20 fake cocktails...'
+20.times do
   cocktail = Cocktail.new(
     name:    Faker::Company.name,
   )
